@@ -17,7 +17,7 @@ ORDER {
     NVARCHAR(32) State "NULL"
     INT ZipCode "NOT NULL"
     INT Phone "NOT NULL"
-    BIT PaymentMethod "NOT NULL"
+    INT PaymentMethod "NOT NULL"
     NVARCHAR(32) Email "NULL"
     INT DeliveryMethod "NOT NULL"
     DATETIME DeliveryAt "NOT NULL"
@@ -33,6 +33,7 @@ ORDERITEM {
 ITEM {
     INT Id PK
     NVARCHAR(32) Name "NOT NULL"
+    DECIMAL Price "NOT NULL"
 }
 
 ITEM ||--o{ ORDERITEM : ""
