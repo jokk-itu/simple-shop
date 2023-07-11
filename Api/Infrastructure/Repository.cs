@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Api.Domain.Abstract;
+using Api.Infrastructure.Abstract;
 using Microsoft.EntityFrameworkCore;
 
 namespace Api.Infrastructure;
