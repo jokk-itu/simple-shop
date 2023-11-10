@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using Api.Domain.Abstract;
 
 namespace Api.Domain.OrderAggregate;
 
-public sealed class Contact : ValueObject
+public sealed record Contact
 {
   public Contact(
     string name,
@@ -33,19 +31,8 @@ public sealed class Contact : ValueObject
     Organization = organization;
   }
 
-#pragma warning disable 8618
-  public Contact() { }
-#pragma warning restore 8618
-
-  public string Name { get; init; }
-  public string? Organization { get; init; }
-  public int PhoneNumber { get; init; }
-  public string Email { get; init; }
-  protected override IEnumerable<object?> GetEqualityComponents()
-  {
-    yield return Name;
-    yield return Organization;
-    yield return PhoneNumber;
-    yield return Email;
-  }
+  public string Name { get; private init; }
+  public string? Organization { get; private init; }
+  public int PhoneNumber { get; private init; }
+  public string Email { get; private init; }
 }

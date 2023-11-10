@@ -1,5 +1,4 @@
-﻿using Api.Domain;
-using Api.Domain.OrderAggregate;
+﻿using Api.Domain.OrderAggregate;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -21,10 +20,10 @@ public class OrderConfiguration : IEntityTypeConfiguration<Order>
           .Property(x => x.PaymentMethod)
           .HasConversion<int>();
 
-        builder
-          .OwnsOne(x => x.Address);
+        builder.OwnsOne(x => x.Address);
+        builder.Navigation(x => x.Address).IsRequired();
 
-        builder
-          .OwnsOne(x => x.Contact);
+        builder.OwnsOne(x => x.Contact);
+        builder.Navigation(x => x.Contact).IsRequired();
     }
 }
